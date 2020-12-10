@@ -1,15 +1,15 @@
 module Main where
 
-import Day
-import Day1
+import Door
+import Door1
 
 main :: IO ()
 main =
-    let days = [day1] in
-    mconcat $ runDay <$> days
+    let doors = [door1] in
+    mconcat $ runDoor <$> doors
 
-runDay :: Day -> IO()
-runDay d = do
-    putStrLn $ "=== Running Day " ++ (show $ no d) ++ " ==="
+runDoor :: Door -> IO()
+runDoor d = do
+    putStrLn $ "=== Running Door " ++ (show $ no d) ++ " ==="
     run d
-    putStrLn $ "======================\n"
+    putStrLn $ "=======================\n"

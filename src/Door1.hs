@@ -1,13 +1,13 @@
-﻿module Day1 where
+﻿module Door1 where
 
-import Day
+import Door
 
-day1 :: Day
-day1 = Day {
+door1 :: Door
+door1 = Door {
     no = 1,
     run = do
-        runOnFile "resources/Day1/example.txt" 2020
-        runOnFile "resources/Day1inputs/mypuzzle.txt" 2020
+        runOnFile "resources/Door1/example.txt" 2020
+        runOnFile "resources/Door1/mypuzzle.txt" 2020
 }
 
 runOnFile :: String -> Int -> IO ()
