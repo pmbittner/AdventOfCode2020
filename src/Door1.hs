@@ -5,22 +5,21 @@ import Door
 door1 :: Door
 door1 = Door {
     no = 1,
-    run = do
-        runOnFile "resources/Door1/example.txt" 2020
-        runOnFile "resources/Door1/mypuzzle.txt" 2020
+    files = [
+        "example.txt",
+        "mypuzzle.txt"
+    ],
+    runDoor = runOnFile 2020
 }
 
-runOnFile :: String -> Int -> IO ()
-runOnFile file sum = do
-    example <- readFile file
-    putStrLn $ "Input: " ++ file
-    -- putStrLn example
-    let expenses = parseExpenses example
-    putStrLn $ "  Product of two numbers that sum to "++show sum
+runOnFile :: Int -> String -> IO ()
+runOnFile sum text = do
+    -- putStrLn text
+    let expenses = parseExpenses text
+    putStrLn $ "  Product of two numbers that sum to " ++ show sum
     putStrLn $ "    " ++ show (productOfTheTwoNumbersThatSumTo sum expenses)
-    putStrLn $ "  Product of three numbers that sum to "++show sum
+    putStrLn $ "  Product of three numbers that sum to " ++ show sum
     putStrLn $ "    " ++ show (productOfTheThreeNumbersThatSumTo sum expenses)
-    putStrLn ""
 
 parseExpenses :: String -> [Int]
 parseExpenses s = read <$> words s

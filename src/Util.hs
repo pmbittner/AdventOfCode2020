@@ -15,7 +15,7 @@ countMatches (x:xs) p =
 splitAtFirst :: [a] -> (a -> Bool) -> ([a], [a])
 splitAtFirst [] _ = ([], [])
 splitAtFirst l@(x:xs) p =
-   let (prefix, suffix) = (splitAtFirst xs p) in
+   let (prefix, suffix) = splitAtFirst xs p in
    if p x
       then ([], l)
       else (x:prefix, suffix)

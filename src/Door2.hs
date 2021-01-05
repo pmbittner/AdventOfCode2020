@@ -10,9 +10,11 @@ import Text.Read
 door2 :: Door
 door2 = Door {
     no = 2,
-    run = do
-        checkPasswordsIn "resources/Door2/example.txt"
-        checkPasswordsIn "resources/Door2/mypuzzle.txt"
+    files = [
+        "example.txt",
+        "mypuzzle.txt"
+    ],
+    runDoor = checkPasswordsIn
 }
 
 data PasswordConstraint = PasswordConstraint {
@@ -25,12 +27,11 @@ instance Show PasswordConstraint where
     show pwc = show (minOccurences pwc) ++ "-" ++ show (maxOccurences pwc) ++ " " ++ [char pwc]
 
 checkPasswordsIn :: String -> IO ()
-checkPasswordsIn file = do
-    putStrLn $ "Input: " ++ file
-    fileContents <- readFile file
-    let pwlines = lines fileContents
-    putStrLn $ sayHowManyPasswordsAreValid "Sled Rental" pwlines isValidSledRental
-    putStrLn $ sayHowManyPasswordsAreValid "Toboggan Rental" pwlines isValidTobogganRental
+checkPasswordsIn fileContents =
+    let pwlines = lines fileContents in
+    do
+        putStrLn $ sayHowManyPasswordsAreValid "Sled Rental" pwlines isValidSledRental
+        putStrLn $ sayHowManyPasswordsAreValid "Toboggan Rental" pwlines isValidTobogganRental
 
 sayHowManyPasswordsAreValid :: String -> [String] -> (PasswordConstraint -> String -> Bool) -> String
 sayHowManyPasswordsAreValid name pwlines validator =
