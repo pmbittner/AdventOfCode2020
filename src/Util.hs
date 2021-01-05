@@ -24,3 +24,8 @@ xor :: [Bool] -> Bool
 xor [] = False
 xor (True:xs) = notElem True xs
 xor (False:xs) = xor xs
+
+applyBinaryOperatorToMonad :: Monad m => (a -> b -> c) -> m a -> m b -> m c
+applyBinaryOperatorToMonad f first second = do
+   x <- first 
+   f x <$> second

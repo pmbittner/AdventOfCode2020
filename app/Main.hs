@@ -3,12 +3,14 @@ module Main where
 import Door
 import Door1
 import Door2
+import Door3
 
 main :: IO ()
 main =
     let doors = [
             door1,
-            door2
+            door2,
+            door3
           ] in
     mconcat $ runDoorOnAllItsFiles <$> doors
 

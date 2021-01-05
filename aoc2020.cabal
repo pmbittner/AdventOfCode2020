@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b202a524034e6085e3513baaaf3450ebe86689273aab8e4e281bffd6b42746c9
+-- hash: 1642ebc5bae8397407d518830522293ff552fb2a3777ca79f07960607ec1182d
 
 name:           aoc2020
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       Door
       Door1
       Door2
+      Door3
       Util
   other-modules:
       Paths_aoc2020
