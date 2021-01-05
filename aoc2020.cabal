@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9b60b21c8959f7103ae20a5489347f3a89f461121fbe78ae5a1e15e677dee1d6
+-- hash: b202a524034e6085e3513baaaf3450ebe86689273aab8e4e281bffd6b42746c9
 
 name:           aoc2020
 version:        0.1.0.0
@@ -29,12 +29,15 @@ library
   exposed-modules:
       Door
       Door1
+      Door2
+      Util
   other-modules:
       Paths_aoc2020
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , split >=0.2.3.4
   default-language: Haskell2010
 
 executable aoc2020-exe
@@ -47,6 +50,7 @@ executable aoc2020-exe
   build-depends:
       aoc2020
     , base >=4.7 && <5
+    , split >=0.2.3.4
   default-language: Haskell2010
 
 test-suite aoc2020-test
@@ -60,4 +64,5 @@ test-suite aoc2020-test
   build-depends:
       aoc2020
     , base >=4.7 && <5
+    , split >=0.2.3.4
   default-language: Haskell2010

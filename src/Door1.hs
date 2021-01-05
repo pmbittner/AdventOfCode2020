@@ -13,14 +13,13 @@ door1 = Door {
 runOnFile :: String -> Int -> IO ()
 runOnFile file sum = do
     example <- readFile file
-    putStrLn "Input:"
-    putStrLn example
-    putStrLn "----------"
+    putStrLn $ "Input: " ++ file
+    -- putStrLn example
     let expenses = parseExpenses example
-    putStrLn $ "Product of two numbers that sum to "++(show sum)
-    putStrLn . show $ productOfTheTwoNumbersThatSumTo sum expenses
-    putStrLn $ "Product of three numbers that sum to "++(show sum)
-    putStrLn . show $ productOfTheThreeNumbersThatSumTo sum expenses
+    putStrLn $ "  Product of two numbers that sum to "++show sum
+    putStrLn $ "    " ++ show (productOfTheTwoNumbersThatSumTo sum expenses)
+    putStrLn $ "  Product of three numbers that sum to "++show sum
+    putStrLn $ "    " ++ show (productOfTheThreeNumbersThatSumTo sum expenses)
     putStrLn ""
 
 parseExpenses :: String -> [Int]
