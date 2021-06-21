@@ -50,6 +50,7 @@ isTree Tree = 1
 isTree Empty = 0
 
 widthOf :: Map -> Int
+widthOf [] = 0
 widthOf [[]] = 0
 widthOf (x:xs) = length x
 
