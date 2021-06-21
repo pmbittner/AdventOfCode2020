@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1642ebc5bae8397407d518830522293ff552fb2a3777ca79f07960607ec1182d
+-- hash: 2a3a5adc30ca6eeff180448bd983c3d1e93a8feae9b48a67936b168ae35db088
 
 name:           aoc2020
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
   exposed-modules:
       Door
       Door1
+      Door10
       Door2
       Door3
       Util

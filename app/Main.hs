@@ -4,13 +4,15 @@ import Door
 import Door1
 import Door2
 import Door3
+import Door10
 
 main :: IO ()
 main =
     let doors = [
             door1,
             door2,
-            door3
+            door3,
+            door10
           ] in
     mconcat $ runDoorOnAllItsFiles <$> doors
 
